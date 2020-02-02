@@ -1,0 +1,79 @@
+<div class="columns-container">
+    <div id="columns" class="container">
+        <div class="row">
+            <div class="home-container">
+                <div id="left_column" class="column col-xs-12 col-sm-3">
+                    <div id="categories_block_left" class="block">
+                        <h2 class="title_block">
+                            Categories
+                        </h2>
+                        <div class="block_content">
+                            <ul class="tree dhtml">
+
+                                <li>
+                                    <a class="selected" href="#" title="" data-id="0">
+                                        All Books
+                                    </a>
+                                </li>
+
+                                {% for category in categories %}
+                                    <li>
+                                        <a href="#" title="{{ category.description }}" data-id="{{ category.id }}">
+                                            {{ category.name }}
+                                        </a>
+                                    </li>
+                                {% endfor %}
+
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- /Block categories module -->
+                </div>
+                <div id="center_column" class="center_column col-xs-12 col-sm-9">
+                    <div class="content_scene_cat">
+                        <!-- Category image -->
+                        <div class="content_scene_cat_bg"
+                             style="background:url({{ asset('images/book.png') }}) right top no-repeat; min-height:152px;background-size: cover;">
+                            <div class="cat_desc">
+                                <span class="category-name">Special Offers!</span>
+                                <div id="category_description_short" class="rte">
+                                 <p style="text-align: justify;color: black;">-If you buy 5 or more Children books you get a 10% discount from the Children books
+total</p>
+<p style="text-align: justify;color: black;">-If you buy 10 books from each category you get 5% additional discount from the total
+bill</p><p style="text-align: justify;color: black;">
+-If you have a coupon code (which you can enter and redeem from the invoice page
+itself) you get a 15% discount for the total bill. In this case, all other discounts will be
+invalidated.</p>
+                                   
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <h1 class="page-heading product-listing"><span
+                                class="heading-counter"></span></h1>
+                    <div class="content_sortPagiBar clearfix">
+                        <div class="sortPagiBar clearfix">
+                            <ul class="display hidden-xs">
+                                <li class="display-title">View:</li>
+                                <li id="grid" class="selected"><a rel="nofollow" href="#" title="Grid"><i
+                                                class="icon-th-large"></i>Grid</a></li>
+                                <li id="list"><a rel="nofollow" href="#" title="List"><i
+                                                class="icon-th-list"></i>List</a></li>
+                            </ul>
+
+                        </div>
+                        <div class="top-pagination-content clearfix">
+                            <div class="product-count">
+                                Showing 1 - 55 of 100 items
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-content" id="books_container">
+                        Loading...
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

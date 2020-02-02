@@ -1,0 +1,74 @@
+<ul class="product_list grid row blocknewproducts tab-pane active">
+    {% for book in books %}
+        <li class="animated swing ajax_block_product col-xs-12 col-sm-6 col-md-4 alpha first-in-line first-item-of-tablet-line first-item-of-mobile-line ">
+            <div class="product-container">
+                <div class="left-block">
+                    <div class="product-image-container">
+                        <a class="product_img_link"
+                           href=""
+                           title="Mytasas leryuoasa jeryuasa" itemprop="url">
+                            <img class="replace-2x img-responsive"
+                                 src="{{ asset('images/books/') }}{{ em.getRandomImage() }}"
+                                 title="{{ book.getDescription() }}" width="395" height="600"/>
+                        </a>
+                        <a class="quick-view" href="" rel="">
+                            <span>Quick view</span>
+                        </a>
+                        <div class="content_price" itemprop="offers" itemscope >
+                            <span itemprop="price" class="price product-price">{{ book.getRates().actual_rate }}</span>
+                            <meta itemprop="priceCurrency" content="1"/>
+                            <span class="old-price product-price">{{ book.price }}</span>
+                            <span class="price-percent-reduction">-{{  book.getRates().discount }}%</span>
+                        </div>
+                        <span class="new-box">
+								<span class="new-label">{{ book.getCategory().name }}</span>
+							</span>
+                        {% if book.getCart() %}
+                        <span class="sale-box">
+								<span class="sale-label">In Cart!</span>
+							</span>
+                        {% endif %}
+
+                    </div>
+                </div>
+                <div class="right-block">
+                    <div class="right-block-container">
+                        <h5 itemprop="name">
+                            <a class="product-name" href="" title="Mytasas leryuoasa jeryuasa" itemprop="url">{{ book.getName() }}</a>
+                        </h5>
+
+
+                        <p class="product-desc" itemprop="description">
+                            Well, reading books as a hobby was always a noble, pleasant and
+                            very useful kind of activity. It gives knowledge, exerts on the
+                            process of development of your personality.
+                        </p>
+                        <div itemprop="offers" class="content_price">
+                            <span itemprop="price" class="price product-price">{{ book.getRates().actual_rate }}</span>
+                            <meta itemprop="priceCurrency" content="1"/>
+                            <span class="old-price product-price">{{ book.price }}</span>
+                            <span class="price-percent-reduction">-{{  book.getRates().discount }}%</span>
+                        </div>
+                    </div>
+                    <div class="button-container">
+                        <a itemprop="url" class="button remove_book btn btn-default" data-id="{{ book.getId() }}"
+                           href="" title="View">
+                            <span></span>
+                        </a>
+                        <a class="button ajax_add_to_cart_button btn btn-default"
+                           href="#"
+                           rel="nofollow" title="Add to cart" data-id="{{ book.id }}">
+                            <span>Add to cart</span>
+                        </a>
+
+                    </div>
+                    <span class="availability">
+                        <span class="available-now">
+                            <link itemprop="availability" href="https://schema.org/InStock"/>In Stock</span>
+                    </span>
+                </div>
+            </div>
+        </li>
+    {% endfor %}
+
+</ul>

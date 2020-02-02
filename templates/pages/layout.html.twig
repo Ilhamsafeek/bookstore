@@ -1,0 +1,164 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Books store</title>
+    <meta name="generator" content="PrestaShop" />
+    <meta name="robots" content="index,follow" />
+    <meta name="viewport" content="width=device-width, minimum-scale=0.25, maximum-scale=1.6, initial-scale=1.0" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,700'rel='stylesheet' type='text/css'>
+
+    <link rel="stylesheet" href="{{ asset('style/global.css') }}" type="text/css" media="all" />
+    <link rel="stylesheet" href="{{ asset('style/product_list.css') }}" type="text/css" media="all" />
+    <link rel="stylesheet" href="{{ asset('style/blockpermanentlinks.css') }}" type="text/css" media="all" />
+    <link rel="stylesheet" href="{{ asset('style/homeslider.css') }}" type="text/css" media="all" />
+    <link rel="stylesheet" href="{{ asset('style/hooks.css') }}" type="text/css" media="all" />
+    <link rel="stylesheet" href="{{ asset('style/blockcategories.css') }}" type="text/css" media="all" />
+    <link rel="stylesheet" href="{{ asset('style/blockcart.css') }}" type="text/css" media="all" />
+    <link rel="stylesheet" href="{{ asset('style/category.css') }}" type="text/css" media="all" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.js"></script>
+
+    <script src="{{ asset('script/global.js') }}"></script>
+
+</head>
+<body id="index" class="index hide-right-column lang_en">
+<div id="page">
+    <div class="page-container">
+        <div class="header-container">
+            <header id="header">
+                <div class="banner">
+                    <div class="container">
+                        <div class="row">
+
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="container">
+                        <div class="row">
+                            <div id="header_logo">
+                                <a href="/" title="Books store">
+                                    <img class="logo img-responsive" src="{{ asset('images/logo.jpg') }}" alt="Books store" width="500" height="84" />
+                                </a>
+                            </div>
+                            <!-- MODULE Block cart -->
+                            <div class="col-sm-3 clearfix shopping_cart_wrap ">
+                                <div class="shopping_cart">
+                                    <a href="{{ path('shoppingcart_shopping_indexcheckout') }}?" title="View my shopping cart" rel="nofollow">
+                                        <b></b>
+                                        <span class="ajax_cart_quantity unvisible">0</span>
+                                        <span class="ajax_cart_product_txt unvisible"> B | $<span class="ajax_cart_total">$0</span></span>
+
+                                        <span class="ajax_cart_no_product">(empty)</span>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div id="layer_cart">
+                                <div class="clearfix">
+                                    <div class="layer_cart_product col-xs-12 col-md-6">
+                                        <span class="cross" title="Close window"></span>
+                                        <h2>
+                                            <i class="icon-ok"></i>Product successfully added to your shopping cart
+                                        </h2>
+                                        <div class="product-image-container layer_cart_img">
+                                        </div>
+                                        <div class="layer_cart_product_info">
+                                            <span id="layer_cart_product_title" class="product-name"></span>
+                                            <span id="layer_cart_product_attributes"></span>
+                                            <div>
+                                                <strong class="dark">Quantity</strong>
+                                                <span id="layer_cart_product_quantity"></span>
+                                            </div>
+                                            <div>
+                                                <strong class="dark">Total</strong>
+                                                <span id="layer_cart_product_price"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="layer_cart_cart col-xs-12 col-md-6">
+                                        <h2>
+                                            <!-- Plural Case [both cases are needed because page may be updated in Javascript] -->
+                                            <span class="ajax_cart_product_txt_s ">
+						There are <span class="ajax_cart_quantity">2</span> items in your cart.
+					</span>
+                                            <!-- Singular Case [both cases are needed because page may be updated in Javascript] -->
+                                            <span class="ajax_cart_product_txt  unvisible">
+						There is 1 item in your cart.
+					</span>
+                                        </h2>
+
+                                        <div class="layer_cart_row">
+                                            <strong class="dark">
+                                                Total products
+                                                (tax excl.)
+                                            </strong>
+                                            <span class="ajax_block_products_total">
+													$22.54
+											</span>
+                                        </div>
+
+                                        <div class="layer_cart_row">
+                                            <strong class="dark">
+                                                Total shipping&nbsp;(tax excl.)
+                                            </strong>
+                                            <span class="ajax_cart_shipping_cost">
+													$2.00
+											</span>
+                                        </div>
+                                        <div class="layer_cart_row">
+                                            <strong class="dark">
+                                                Total
+                                                (tax excl.)
+                                            </strong>
+                                            <span class="ajax_block_cart_total">
+																					$24.54
+																		</span>
+                                        </div>
+                                        <div class="button-container">
+                                                <span class="continue btn btn-default button exclusive-medium" title="Continue shopping">
+						<span>
+							<i class="icon-chevron-left left"></i>Continue shopping
+						</span>
+                                                </span>
+                                            <a class="btn btn-default button button-medium" href="#" title="Proceed to checkout" rel="nofollow">
+                                                    <span>
+							Proceed to checkout<i class="icon-chevron-right right"></i>
+						</span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="crossseling"></div>
+                            </div>
+                            <!-- #layer_cart -->
+                            <div class="layer_cart_overlay"></div>
+
+                            <div id="gear-right2">
+                                <a id="enable_config" href="#"><i
+                                            class="icon-cogs icon-2x icon-light"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+        </div>
+
+        {% block content %}
+
+        {% endblock %}
+
+    </div>
+</div>
+
+</body>
+
+</html>
