@@ -11,7 +11,7 @@ Step 2
 Config database
 
 Step 3
-
+I have written database migration so, 
 Create Database : `php bin/console doctrine:database:create`
 
 Step 4
@@ -26,12 +26,14 @@ Step 6
 
 Run the application: `php bin/console server:start`
 
-**Test Cases**
+or you can place the folder in local server and open in the browser.
+
+Test Cases
 
 `./vendor/bin/simple-phpunit`
 
 
-**Note:**
+Note:
 * Coupon stored in coupon table.
 * Discount details are stored in the catergory table.
 * Cart Total Value rounded for two decimal places.
